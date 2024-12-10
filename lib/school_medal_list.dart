@@ -39,7 +39,7 @@ class _MedalListState extends State<SchoolMedalList> {
           .map((medal) => {
         'medal_id': medal['medal_id'],
         'ranking': medal['ranking'].toString(),
-        'battle_inf': medal['battle_inf'],
+        'battle_inf': medal['battle_inf'].replaceAll('월 ','월\n'),
       })
           .toList();
     } else {
@@ -130,7 +130,7 @@ class _MedalListState extends State<SchoolMedalList> {
                               Text(
                                 '$battleInf $ranking등', // 제목 변경
                                 style: TextStyle(
-                                  fontSize: 22,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                   color: Color(0xFF4E342E),
                                   letterSpacing: 1.2, // 글자 간격 조정

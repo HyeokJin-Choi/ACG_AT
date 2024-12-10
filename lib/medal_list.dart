@@ -39,7 +39,7 @@ class _MedalListState extends State<MedalList> {
           .map((medal) => {
         'medal_id': medal['medal_id'],
         'ranking': medal['ranking'].toString(),
-        'battle_inf': medal['battle_inf'],
+        'battle_inf': medal['battle_inf'].replaceAll('월 ','월\n'),
       })
           .toList();
     } else {
@@ -128,9 +128,9 @@ class _MedalListState extends State<MedalList> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                '$battleInf $ranking', // Updated title
+                                '$battleInf $ranking등', // Updated title
                                 style: TextStyle(
-                                  fontSize: 15,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                   color: Color(0xFF4E342E),
                                   letterSpacing: 1.2, // Adding letter spacing for better readability
