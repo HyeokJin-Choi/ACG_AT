@@ -19,7 +19,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
     // 서버에서 학교 목록 검색
     final response = await http.get(
-      Uri.parse('http://127.0.0.1:3000/search-schools?query=$query'),
+      Uri.parse('http://116.124.191.174:15023/search-schools?query=$query'),
     );
 
     if (response.statusCode == 200) {
@@ -53,7 +53,7 @@ class _SignupScreenState extends State<SignupScreen> {
     try {
       // 서버에 POST 요청
       final response = await http.post(
-        Uri.parse('http://127.0.0.1:3000/signup'),
+        Uri.parse('http://116.124.191.174:15023/signup'),
         headers: {
           'Content-Type': 'application/json',
         },
